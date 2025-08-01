@@ -1,20 +1,18 @@
-# 📄 Resume Analyzer (MERN Stack)
+# 📄 Resume Analyzer – AI-Powered MERN App
 
-An AI-powered Resume Analyzer built with the MERN stack that lets users upload resumes (PDF/DOCX), parses them, extracts key details, and provides intelligent job recommendations based on skills, experience, and education.
-
----
-
-## 🚀 Features
-
-- 🧾 Upload PDF or DOCX resumes
-- 🧠 Parse resumes using `pdf-parse` and `mammoth`
-- 🛠 Extract education, skills, and experience
-- 🤖 Get AI-powered job recommendations (coming soon)
-- 📈 Job match scoring (planned)
-- 🔐 JWT-based Authentication for users
-- 🧑‍💻 Clean and responsive UI with React + Tailwind CSS
+An AI-powered Resume Analyzer built with the MERN stack. Upload your resume (PDF/DOCX), get intelligent analysis using Cohere AI, and discover filtered job listings — all in one place. Includes user authentication, resume history, and a sleek modern UI.
 
 ---
+
+## ✨ Key Features
+
+✅ Upload and parse PDF/DOCX resumes  
+✅ Extract raw resume content using `pdf-parse` and `mammoth`  
+✅ AI-powered resume analysis using **Cohere API**  
+✅ Personalized job recommendations based on extracted skills  
+✅ Location, experience, and remote job filters  
+✅ JWT-based authentication with user-specific resume history  
+✅ Clean, responsive UI built with TailwindCSS
 
 ## 🛠️ Tech Stack
 
@@ -24,21 +22,22 @@ An AI-powered Resume Analyzer built with the MERN stack that lets users upload r
 - Axios
 
 **Backend:**
-- Node.js
 - Express.js
-- Multer (for file uploads)
-- pdf-parse / mammoth (for parsing)
+- Multer, pdf-parse, mammoth
+- JWT Authentication
+- **Cohere AI API**
 
 **Database:**
-- MongoDB
+- MongoDB Atlas
 - Mongoose
 
-**Other:**
-- JWT Authentication
-- GitHub Actions (for CI/CD — optional)
-- Cohere/OpenAI (planned for AI matching)
-
 ---
+
+## 🔐 .env Configuration
+
+Create a `.env` file in the `/server` directory with:
+
+
 
 ## 📂 Folder Structure
 
