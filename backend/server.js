@@ -108,12 +108,12 @@ ${text}
       {
         model: "command-r-plus",
         prompt: prompt,
-        max_tokens: 600, // Increased for longer resumes
+        max_tokens: 600, 
         temperature: 0.5,
       },
       {
         headers: {
-          Authorization: `Bearer vZodwx9DUzsqFyq8xVo3v422AjAxRCvDLODAsyit`, // your Cohere API key
+          Authorization: `Bearer your Cohere API key`, 
           "Content-Type": "application/json",
         },
       }
