@@ -1,12 +1,62 @@
-# React + Vite
+# 📄 Resume Analyzer (MERN Stack)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An AI-powered Resume Analyzer built with the MERN stack that lets users upload resumes (PDF/DOCX), parses them, extracts key details, and provides intelligent job recommendations based on skills, experience, and education.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- 🧾 Upload PDF or DOCX resumes
+- 🧠 Parse resumes using `pdf-parse` and `mammoth`
+- 🛠 Extract education, skills, and experience
+- 🤖 Get AI-powered job recommendations (coming soon)
+- 📈 Job match scoring (planned)
+- 🔐 JWT-based Authentication for users
+- 🧑‍💻 Clean and responsive UI with React + Tailwind CSS
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tech Stack
+
+**Frontend:**
+- React.js
+- Tailwind CSS
+- Axios
+
+**Backend:**
+- Node.js
+- Express.js
+- Multer (for file uploads)
+- pdf-parse / mammoth (for parsing)
+
+**Database:**
+- MongoDB
+- Mongoose
+
+**Other:**
+- JWT Authentication
+- GitHub Actions (for CI/CD — optional)
+- Cohere/OpenAI (planned for AI matching)
+
+---
+
+## 📂 Folder Structure
+
+Resume-analyzer/
+├── client/ # React frontend
+│ ├── public/
+│ └── src/
+│ ├── components/
+│ ├── pages/
+│ ├── App.js
+│ └── index.js
+│
+├── server/ # Express backend
+│ ├── routes/
+│ ├── controllers/
+│ ├── models/
+│ └── app.js
+│
+├── .gitignore
+├── README.md
+└── package.json
