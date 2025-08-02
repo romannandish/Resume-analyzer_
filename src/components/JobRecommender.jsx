@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 
 const mockJobs = [
   {
@@ -40,7 +39,6 @@ const JobRecommender = ({ extractedSkills = ["React", "Node.js"] }) => {
   });
 
   useEffect(() => {
-    // You can switch this to fetch from RapidAPI later
     setJobs(mockJobs);
   }, []);
 
@@ -60,68 +58,76 @@ const JobRecommender = ({ extractedSkills = ["React", "Node.js"] }) => {
   });
 
   return (
-    <div className="max-w-4xl mx-auto p-6">
-      <h2 className="text-2xl font-bold mb-4">🎯 Job Recommendations</h2>
+    <div className="max-w-5xl mx-auto p-6 text-white">
+      <h2 className="text-3xl font-bold mb-6 text-indigo-300">🎯 Job Recommendations</h2>
 
       {/* Filters */}
-      <div className="flex flex-col md:flex-row gap-4 mb-6">
+      <div className="bg-[#1a1a2e] border border-gray-700 rounded-xl p-4 md:p-6 mb-8 shadow-md space-y-4 md:space-y-0 md:flex md:items-center md:gap-4">
         <input
           type="text"
-          placeholder="Location"
+          placeholder="🔍 Location"
           value={filters.location}
           onChange={(e) =>
             setFilters({ ...filters, location: e.target.value })
           }
-          className="p-2 border rounded-md w-full md:w-1/3"
+          className="w-full md:w-1/3 px-4 py-2 rounded-md bg-[#0f0f2f] text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-400"
         />
         <select
           value={filters.experience}
           onChange={(e) =>
             setFilters({ ...filters, experience: e.target.value })
           }
-          className="p-2 border rounded-md w-full md:w-1/3"
+          className="w-full md:w-1/3 px-4 py-2 rounded-md bg-[#0f0f2f] text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-400"
         >
-          <option value="">Any Experience</option>
+          <option value="">🎓 Any Experience</option>
           <option value="0-1 years">0-1 years</option>
           <option value="1-3 years">1-3 years</option>
           <option value="3-5 years">3-5 years</option>
           <option value="5+ years">5+ years</option>
         </select>
-        <label className="flex items-center gap-2 w-full md:w-1/3">
+        <label className="flex items-center gap-2 text-sm md:w-1/3 text-gray-300">
           <input
             type="checkbox"
             checked={filters.remote}
             onChange={() =>
               setFilters((prev) => ({ ...prev, remote: !prev.remote }))
             }
+            className="form-checkbox bg-gray-800 text-indigo-500 rounded"
           />
           Remote Only
         </label>
       </div>
 
       {/* Job Cards */}
-      <div className="grid gap-4">
+      <div className="grid md:grid-cols-2 gap-6">
         {filteredJobs.length === 0 ? (
-          <p className="text-gray-500">No jobs found with current filters.</p>
+          <p className="text-gray-400">No jobs found with current filters.</p>
         ) : (
           filteredJobs.map((job) => (
             <div
               key={job.id}
-              className="border rounded-lg p-4 bg-white shadow hover:shadow-lg transition"
+              className="bg-[#202040] border border-gray-700 rounded-xl p-6 shadow-md hover:shadow-lg transition transform hover:-translate-y-1 duration-300"
             >
-              <h3 className="text-xl font-semibold">{job.title}</h3>
-              <p className="text-gray-700">
+              <h3 className="text-xl font-semibold text-white mb-1">
+                {job.title}
+              </h3>
+              <p className="text-indigo-300 font-medium">
                 {job.company} — {job.location}
               </p>
-              <p className="text-gray-600">Experience: {job.experience}</p>
-              <p className="text-gray-600">
-                Skills: <span className="text-sm">{job.skills.join(", ")}</span>
+              <p className="text-sm text-gray-400 mt-2">
+                <strong>Experience:</strong> {job.experience}
+              </p>
+              <p className="text-sm text-gray-400">
+                <strong>Skills:</strong>{" "}
+                <span className="text-gray-300">
+                  {job.skills.join(", ")}
+                </span>
               </p>
               <a
                 href={job.applyLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-2 inline-block text-blue-600 hover:underline"
+                className="inline-block mt-4 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold px-4 py-2 rounded-md transition"
               >
                 Apply Now →
               </a>
@@ -134,3 +140,4 @@ const JobRecommender = ({ extractedSkills = ["React", "Node.js"] }) => {
 };
 
 export default JobRecommender;
+
