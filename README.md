@@ -1,61 +1,68 @@
-# 📄 Resume Analyzer – AI-Powered MERN App
+# 📄 Resume Analyzer  
+**AI-Powered Job Matcher & Resume Insights**
 
-An AI-powered Resume Analyzer built with the MERN stack. Upload your resume (PDF/DOCX), get intelligent analysis using Cohere AI, and discover filtered job listings — all in one place. Includes user authentication, resume history, and a sleek modern UI.
-
----
-
-## ✨ Key Features
-
-✅ Upload and parse PDF/DOCX resumes  
-✅ Extract raw resume content using `pdf-parse` and `mammoth`  
-✅ AI-powered resume analysis using **Cohere API**  
-✅ Personalized job recommendations based on extracted skills  
-✅ Location, experience, and remote job filters  
-✅ JWT-based authentication with user-specific resume history  
-✅ Clean, responsive UI built with TailwindCSS
-
-## 🛠️ Tech Stack
-
-**Frontend:**
-- React.js
-- Tailwind CSS
-- Axios
-
-**Backend:**
-- Express.js
-- Multer, pdf-parse, mammoth
-- JWT Authentication
-- **Cohere AI API**
-
-**Database:**
-- MongoDB Atlas
-- Mongoose
+An intelligent resume analysis and job-matching platform powered by the **MERN stack** and **Cohere AI**. Upload your resume (PDF or DOCX), extract insights, and get matched to relevant jobs — all in a beautifully responsive interface.
 
 ---
 
-## 🔐 .env Configuration
+## ✨ Features
 
-Create a `.env` file in the `/server` directory with:
+✅ **Upload & Parse Resumes**  
+- Supports `.pdf` and `.docx` formats  
+- Uses `pdf-parse` and `mammoth` to extract raw text  
+
+🤖 **AI-Powered Analysis**  
+- Resume content analyzed using **Cohere API**  
+- Extracted insights like skills, summary, strengths  
+
+🎯 **Job Recommendations**  
+- Personalized job matches based on resume content  
+- Filter jobs by location, experience, and remote-only  
+
+🔐 **User Authentication & History**  
+- Secure login/signup with **JWT Auth**  
+- View previous resume uploads and results  
+
+🎨 **Modern UI & UX**  
+- Responsive design with Tailwind CSS  
+- Smooth UX with clean layout, buttons, and dark mode ready  
+
+---
+
+## 🧰 Tech Stack
+
+| Category   | Technologies Used                          |
+|------------|---------------------------------------------|
+| Frontend   | React, Tailwind CSS, Axios                 |
+| Backend    | Express.js, Multer, JWT Auth               |
+| Parsing    | pdf-parse, mammoth                         |
+| AI         | Cohere API (for resume summaries)          |
+| Database   | MongoDB Atlas, Mongoose                    |
+
+---
 
 
 
-## 📂 Folder Structure
+## 🛠️ Installation & Setup
 
-Resume-analyzer/
-├── client/ # React frontend
-│ ├── public/
-│ └── src/
-│ ├── components/
-│ ├── pages/
-│ ├── App.js
-│ └── index.js
-│
-├── server/ # Express backend
-│ ├── routes/
-│ ├── controllers/
-│ ├── models/
-│ └── app.js
-│
-├── .gitignore
-├── README.md
-└── package.json
+```bash
+# 1. Clone the repository
+git clone https://github.com/yourusername/resume-analyzer.git
+cd resume-analyzer
+
+# 2. Install frontend & backend dependencies
+cd client && npm install
+cd ../server && npm install
+
+# 3. Add your .env file in /server with:
+COHERE_API_KEY=your_cohere_key
+MONGO_URI=your_mongo_connection
+JWT_SECRET=your_jwt_secret
+
+# 4. Run the app
+# In one terminal tab (server):
+npm run dev  # or nodemon app.js
+
+# In another tab (client):
+npm run dev  # if using Vite
+
